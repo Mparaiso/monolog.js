@@ -1,0 +1,19 @@
+{
+  "name": "monolog",
+  "version": "0.0.0",
+  "description": "Log with Monolog",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies":{
+    "coffee-script":"~1.6",
+    "underscore":"*"
+  },
+  "keywords": [
+    "log",
+    "logger"
+  ],
+  "author": "mparaiso",
+  "license": "LGPL"
+}
