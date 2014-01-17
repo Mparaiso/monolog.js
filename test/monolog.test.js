@@ -19,7 +19,7 @@ describe('monolog', function() {
 			this.logger.pushHandler(this.consoleLogHandler);
 		});
 		describe("", function() {
-			it('should be named ' + this.loggerName, function() {
+			it('should be named logger', function() {
 				this.logger.log(Logger.DEBUG, {foo:"bar"});
 				assert.equal(this.logger.getName(), this.loggerName);
 			});
