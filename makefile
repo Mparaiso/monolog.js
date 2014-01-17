@@ -7,4 +7,4 @@ commit: build
 	@git commit -am"auto-update `date`" | :
 push: commit build
 	@git push origin --all
-.PHONY: commit test 
+.PHONY: commit test push
