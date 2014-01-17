@@ -35,11 +35,26 @@
       </nav>
       <div id='filecontents'>
         <h1 id="mongolog-js">mongolog.js</h1>
-<h3 id="monolog-for-javascript-and-node">monolog for javascript and node</h3><p>author mparaiso <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#109;&#x70;&#x61;&#114;&#97;&#105;&#115;&#111;&#x40;&#x6f;&#x6e;&#108;&#105;&#110;&#x65;&#x2e;&#102;&#x72;">&#109;&#x70;&#x61;&#114;&#97;&#105;&#115;&#111;&#x40;&#x6f;&#x6e;&#108;&#105;&#110;&#x65;&#x2e;&#102;&#x72;</a></p><p>inspired by <a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a></p>
+<h3 id="monolog-for-javascript-and-node">monolog for javascript and node</h3><p>author mparaiso <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x6d;&#x70;&#x61;&#114;&#x61;&#105;&#115;&#x6f;&#64;&#x6f;&#x6e;&#x6c;&#x69;&#110;&#101;&#46;&#x66;&#x72;">&#x6d;&#x70;&#x61;&#114;&#x61;&#105;&#115;&#x6f;&#64;&#x6f;&#x6e;&#x6c;&#x69;&#110;&#101;&#46;&#x66;&#x72;</a></p><p>inspired by <a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a></p><p>Usage</p><pre><code class="lang-javascript">    var monolog = require(&#39;monolog&#39;)
+        , Logger = monolog.Logger
+        , StreamHandler = monolog.handler.StreamHandler;
+
+    //create a Log channel
+    var log = new Logger(&#39;name&#39;)
+    //create a Log handler
+    log.pushHandler(new StreamHandler(&#39;/path/to/your.log&#39;,Logger.DEBUG))
+    //listen to log events
+    log.on(&quot;log&quot;,function(error,record,handler){console.log(arguments)});
+    // add records to the log
+    log.warn(&#39;Foo&#39;)
+    log.err(&#39;Bar&#39;)
+    log.debug(&#39;Baz&#39;)
+</code></pre>
+
       </div>
     </div>
     <div id='footer'>
-  January 17, 14 16:39:40 by
+  January 17, 14 20:26:24 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

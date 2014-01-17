@@ -1,5 +1,5 @@
 test: build
-	@mocha -R spec
+	@mocha -R spec --recursive
 build:
 	@./node_modules/.bin/coffee -m -b -o lib -c src 
 #generate documentation
@@ -8,6 +8,6 @@ doc: build
 commit: build
 	@git add .
 	@git commit -am"auto-update `date`" | :
-push: commit build
+push: commit 
 	@git push origin --all
-.PHONY: commit test push doc
+.PHONY: commit test push doc build

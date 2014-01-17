@@ -35,44 +35,4 @@ describe('monolog', function() {
 			});
 		});
 	});
-
-	describe('handler',function(){
-		describe('StreamHandler',function(){
-			beforeEach(function(){
-				this.filename = "stream.log";
-				try{
-					fs.unlinkSync(this.filename);
-				}catch(ignore){}
-				this.streamHandler = new StreamHandler(this.filename);
-				this.streamHandler.setFormatter(this.lineFormatter);
-				this.logger.pushHandler(this.streamHandler);
-			});
-			it('should log in a file',function(done){
-				var file,message = "foo",self=this;
-				assert(this.streamHandler.getFormatter());
-				this.logger.on(Logger.LOG,function(err,record,handler){
-					assert(!err);
-					file = fs.readFileSync(self.filename,{encoding:"utf-8"});
-					expect(file).to.contain(message);
-					done();
-				});
-				this.logger.log(Logger.DEBUG,message);
-			});
-			it('should log in a file stream',function(done){
-				var message={foo:"bar"}
-					,	self =this
-					,	_stream= fs.createWriteStream(this.filename,{flag:"a"});
-				this.logger.on('log',function(err,record,handler){
-					console.log(arguments);
-					//assert.equal(handler,self.streamHandler);
-					var file = fs.readFileSync(self.filename,{encoding:"utf-8"});
-					expect(file).to.contain(JSON.stringify(message));
-					done();
-				});
-				this.streamHandler.stream = _stream;
-				this.logger.log(Logger.INFO,message);
-			});
-		});
-	});
-
 });
