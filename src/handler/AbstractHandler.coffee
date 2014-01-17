@@ -1,4 +1,5 @@
 Logger = require '../Logger'
+LineFormatter = require '../formatter/LineFormatter'
 
 class AbstractHandler
 	### 
@@ -6,6 +7,8 @@ class AbstractHandler
 	###
 	constructor:(@level=Logger.DEBUG,@bubble=true)->
 		processors= []
+
+
 
 	###
     Checks whether the given record will be handled by this handler.
@@ -29,7 +32,8 @@ class AbstractHandler
 	popProcessor:()->
 		@processors.shift();return this
 	setFormatter:(@formatter)->
-	getFormatter:->@formatter
+	getFormatter:->
+		@formatter = if not @formatter  then new LineFormatter else @formatter
 	setLevel:(@level)->
 	getLevel:->@level
 	setBubble:(@bubble)->
