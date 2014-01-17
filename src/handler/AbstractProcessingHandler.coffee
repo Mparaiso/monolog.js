@@ -2,7 +2,8 @@ AbstractHandler = require('./AbstractHandler')
 
 class AbstractProcessingHandler extends AbstractHandler
 	
-	handle:(record)->
+	# @return {Boolean}
+	handle:(record,cb)->
 		if @isHandling(record)
 			record = @processRecord(record)
 			
@@ -11,8 +12,9 @@ class AbstractProcessingHandler extends AbstractHandler
 			else 
 				record.message
 
-			@write(record)
+			@write(record,cb)
 			@bubble==false
+			false
 		else
 			false
 
@@ -24,5 +26,5 @@ class AbstractProcessingHandler extends AbstractHandler
 			for processor in @processors     
 				record = processor(record)
 		return record
-#
+
 module.exports =  AbstractProcessingHandler

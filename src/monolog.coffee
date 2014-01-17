@@ -8,6 +8,7 @@ monolog =
 		ConsoleLogHandler:require('./handler/ConsoleLogHandler')
 		NullHandler:require('./handler/NullHandler')
 		TestHandler:require('./handler/TestHandler')
+		StreamHandler:require('./handler/StreamHandler')
 	formatter:
 		LineFormatter:require('./formatter/LineFormatter')
 		NormalizerFormatter:require('./formatter/NormalizerFormatter')

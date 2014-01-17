@@ -6,4 +6,8 @@ class NullHandler extends AbstractHandler
     	to put on top of an existing stack to override it temporarily.
    	###
 	handle:(record)->
-		if record.level < @level then false else true
+		if record.level < @level 
+			false 
+		else 
+			super
+			true

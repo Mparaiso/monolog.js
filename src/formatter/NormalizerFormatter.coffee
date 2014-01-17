@@ -7,7 +7,7 @@ util = require 'util'
 class NormalizerFormatter extends Formatterinterface
 
 	format:(record)->
-		@normalize(record)
+		@normalize(Object.create(record))
 
 	formatBatch:(records)->
 		@format(record)  for record in records
@@ -16,8 +16,6 @@ class NormalizerFormatter extends Formatterinterface
 		record[key]=@doNormalize(value) for key,value of record 
 		return record
 			
-
-
 	doNormalize:(data)->
 		if typeof data in ['string','number','function','boolean']
 			data.toString()

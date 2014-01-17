@@ -1,7 +1,17 @@
 "use strict"
+util = require 'util'
+events = require 'events'
+###
+	Monolog log channel
 
+	It contains a stack of Handlers and a stack of Processors.
+	and uses them to store records that are added to it.
+###
 class Logger 
 
+	util.inherits(Logger,events.EventEmitter)
+
+	@LOG="log"
 	@DEBUG=100
 	@INFO=200
 	@NOTICE=250
@@ -27,8 +37,8 @@ class Logger
 	popHandler:->@handlers.pop()
 	pushProcessor:(processor)->@processors.unshift(processor)
 	popProcessor:->@processors.pop()
+	#add a log record
 	addRecord:(level,message,context)->
-		#add a log record
 		record=
 			message:message
 			context:context
@@ -44,7 +54,7 @@ class Logger
 		if handlerKey is null then return false
 		record = processor(record) for processor in @processors
 
-		while @handlers[handlerKey] and false == @handlers[handlerKey].handle(record)
+		while @handlers[handlerKey] and false == @handlers[handlerKey].handle(record,(err,r,handler)=>@emit(Logger.LOG,err,record,handler))
 			handlerKey++
 		true
 	debug:(message,context)->
@@ -63,18 +73,20 @@ class Logger
 		@addRecord(Logger.ALERT,message,context)
 	emergency:(message,context)->
 		@addRecord(Logger.EMERGENCY,message,context)
+
+	# Checks whether the Logger has a handler that listens on the given level 
 	isHandling:(level)->
-		### Checks whether the Logger has a handler that listens on the given level ###
 		record={level}
 		@handlers.some (handler)->handler.isHandling(record)
+
+	# Adds a log record at an arbitrary level. ###
 	log:(level,message,context)->
-		### Adds a log record at an arbitrary level. ###
 		if typeof(level) is "string" then level = Logger[level] 
 		@addRecord(level,message,context)
 	crit:@::critical
 	err:@::error
 	emer:@::emergency
 		
-#
+
 module.exports = Logger
 

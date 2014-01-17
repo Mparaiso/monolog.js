@@ -8,5 +8,6 @@ class TestHandler extends Abstractprocessinghandler
 		super
 		@records = []
 
-	write:(record)->
+	write:(record,cb)->
 		@records.push(record)
+		cb(undefined,record,handler) if cb instanceof Function

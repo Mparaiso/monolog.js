@@ -2,11 +2,8 @@ AbstractProcessingHandler=require('./AbstractProcessingHandler')
 
 class ConsoleLogHandler extends AbstractProcessingHandler
 
-	write:(record)->
-		if console[record.level] instanceof Function
-			console[record.level](record.formatted)
-		else
-			console.log(record.formatted)
-		return
+	write:(record,cb)->
+		console.log(record.formatted)
+		cb(undefined,record,this) if cb instanceof Function
 
 module.exports = ConsoleLogHandler
