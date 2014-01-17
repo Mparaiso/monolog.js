@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "ConsoleLogHandler.js",
+  "sourceRoot": "..\\..",
+  "sources": [
+    "src\\handler\\ConsoleLogHandler.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA,8CAAA;GAAA;kSAAA;;AAAA,CAAA,EAA0B,IAAA,kBAA1B,IAA0B;;AAEpB,CAFN;CAIC;;;;;CAAA;;CAAA,EAAM,EAAN,CAAM,GAAC;CACN,GAAA,CAAW,CAAM,CAAN,CAAX,IAAoC;CACnC,IAAQ,CAAR,CAAQ,EAAR;MADD;CAGC,EAAA,GAAA,CAAO,EAAP;MAJI;CAAN,EAAM;;CAAN;;CAF+B;;AAShC,CAXA,EAWiB,GAAX,CAAN,UAXA"
+}

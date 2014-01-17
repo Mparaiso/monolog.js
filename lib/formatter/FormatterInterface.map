@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "FormatterInterface.js",
+  "sourceRoot": "..\\..",
+  "sources": [
+    "src\\formatter\\FormatterInterface.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,CAAA,WAAA;CAAA,GAAA,cAAA;;AAEM,CAFN;CAIC;;CAAA,EAAO,GAAP,GAAQ;;CAAR,EAEY,IAAA,EAAC,EAAb;;CAFA;;CAJD;;AAQA,CARA,EAQiB,GAAX,CAAN,WARA"
+}

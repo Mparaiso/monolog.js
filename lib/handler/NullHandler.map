@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "NullHandler.js",
+  "sourceRoot": "..\\..",
+  "sources": [
+    "src\\handler\\NullHandler.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA,IAAA,8BAAA;GAAA;kSAAA;;AAAA,CAAA,EAAkB,IAAA,QAAlB,IAAkB;;AAEZ,CAFN;CAGC;;;;;CAAA;;CAAA;;;;CAAA;;CAAA,EAIO,GAAP,GAAQ;CACP,EAAkB,CAAlB,CAAG,CAAM;CAAT,YAA8B;MAA9B;CAAA,YAAyC;MADnC;CAJP,EAIO;;CAJP;;CADyB"
+}

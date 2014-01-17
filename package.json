@@ -8,7 +8,11 @@
   },
   "dependencies":{
     "coffee-script":"~1.6",
+    "source-map-support":"*",
     "underscore":"*"
+  },
+  "devDependencies":{
+    "mocha":"*"
   },
   "keywords": [
     "log",

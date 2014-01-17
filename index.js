@@ -1,3 +1,3 @@
 "use strict";
-require('coffee-script');
-module.exports=require('./monolog.coffee');
+require('source-map-support');
+module.exports=require('./lib/monolog');
