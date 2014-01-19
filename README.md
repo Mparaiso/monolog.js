@@ -1,6 +1,8 @@
 mongolog.js
 ===========
 
+[![Build Status](https://travis-ci.org/Mparaiso/monolog.js.png?branch=master)](https://travis-ci.org/Mparaiso/monolog.js)
+
 ###monolog for javascript and node
 
 author mparaiso <mparaiso@online.fr>
