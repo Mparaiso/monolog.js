@@ -30,19 +30,3 @@ describe('monolog.processor.CouchDBHandler',function(){
 
 	});
 });
-
-
-/*
-request({url:'http://aikah.iriscouch.com/logger'
-	,method:'POST'
-	,body:JSON.stringify({param:"value"})
-	,headers:{
-		"content-type":"application/json"
-	}}
-	,function(e,r,body){
-	console.log(body);
-	assert.equal(body.ok,true);
-	assert(body.id);
-	done();
-});
-*/

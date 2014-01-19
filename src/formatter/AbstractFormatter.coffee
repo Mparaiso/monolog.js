@@ -1,6 +1,7 @@
 "use strict"
 
-class FormatterInterface
+#Base class for formatter
+class AbstractFormatter
 	# Formats a log record.
 	format:(record)->
 		throw "not implemented"
@@ -8,4 +9,4 @@ class FormatterInterface
 	formatBatch:(records)->
 		records.map((r)=>@format(r)).join()
 
-module.exports = FormatterInterface
+module.exports = AbstractFormatter
