@@ -35,7 +35,9 @@
       </nav>
       <div id='filecontents'>
         <h1 id="mongolog-js">mongolog.js</h1>
-<h3 id="monolog-for-javascript-and-node">monolog for javascript and node</h3><p>author mparaiso <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#x6d;&#x70;&#x61;&#114;&#x61;&#105;&#115;&#x6f;&#64;&#x6f;&#x6e;&#x6c;&#x69;&#110;&#101;&#46;&#x66;&#x72;">&#x6d;&#x70;&#x61;&#114;&#x61;&#105;&#115;&#x6f;&#64;&#x6f;&#x6e;&#x6c;&#x69;&#110;&#101;&#46;&#x66;&#x72;</a></p><p>inspired by <a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a></p><p>Usage</p><pre><code class="lang-javascript">    var monolog = require(&#39;monolog&#39;)
+<h3 id="monolog-for-javascript-and-node">monolog for javascript and node</h3><p>author mparaiso <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x6d;&#x70;&#x61;&#114;&#97;&#x69;&#x73;&#x6f;&#64;&#111;&#x6e;&#108;&#x69;&#110;&#101;&#x2e;&#102;&#x72;">&#x6d;&#x70;&#x61;&#114;&#97;&#x69;&#x73;&#x6f;&#64;&#111;&#x6e;&#108;&#x69;&#110;&#101;&#x2e;&#102;&#x72;</a></p><p>heavily inspired by [monolog]&#39;<a href="https://github.com/Seldaek/monolog">https://github.com/Seldaek/monolog</a>)</p><h3 id="usage">Usage</h3>
+<h4 id="basic-usage">Basic usage</h4>
+<pre><code class="lang-javascript">    var monolog = require(&#39;monolog&#39;)
         , Logger = monolog.Logger
         , StreamHandler = monolog.handler.StreamHandler;
 
@@ -50,11 +52,32 @@
     log.err(&#39;Bar&#39;)
     log.debug(&#39;Baz&#39;)
 </code></pre>
+<h4 id="server-request-logging">Server request logging</h4>
+<pre><code class="lang-javascript">    var http, logger, monolog, port, server, webProcessor;
+
+    http = require(&#39;http&#39;);
+    monolog = require(&#39;./index&#39;);
+    port = 3000;
+    server = http.createServer();
+    logger = new monolog.Logger;
+    webProcessor = logger.pushHandler(new monolog.handler.ConsoleLogHandler);
+
+    logger.pushProcessor(new monolog.processor.WebProcessor(server));
+
+    server.on(&#39;request&#39;, function(req, res) {
+      logger.info(&#39;logging request&#39;);
+      return res.end(&#39;ok!&#39;);
+    });
+
+    server.listen(3000);
+
+    console.log(&quot;listening on port &quot; + port);
+</code></pre>
 
       </div>
     </div>
     <div id='footer'>
-  January 17, 14 20:26:24 by
+  January 19, 14 17:23:01 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

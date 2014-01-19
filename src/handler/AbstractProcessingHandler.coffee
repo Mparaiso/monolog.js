@@ -18,8 +18,8 @@ class AbstractProcessingHandler extends AbstractHandler
 		else
 			false
 
-	write:(record)->
-		throw new Error('not implemented yet');return
+	write:(record,cb)->
+		cb(undefined,undefined,record,this) if cb instanceof Function
 
 	processRecord:(record)->
 		if @processors

@@ -8,22 +8,31 @@ class AbstractHandler
 	constructor:(@level=Logger.DEBUG,@bubble=true)->
 		processors= []
 
-
-
 	###
-    Checks whether the given record will be handled by this handler.
-	This is mostly done for performance reasons, to avoid calling processors for nothing.
-	Handlers should still check the record levels within handle(), returning false in isHandling()
-	is no guarantee that handle() will not be called, and isHandling() might not be called
-	for a given record.
-	@param {Array} record
-	@return {Boolean}
+	    Checks whether the given record will be handled by this handler.
+		This is mostly done for performance reasons, to avoid calling processors for nothing.
+		Handlers should still check the record levels within handle(), returning false in isHandling()
+		is no guarantee that handle() will not be called, and isHandling() might not be called
+		for a given record.
+		@param {Array} record
+		@return {Boolean}
 	###
 	isHandling:(record)->
 		record.level>=@level
+	###
+		handle a record
+		@param  {Object}   record 
+		@param  {Function} cb     
+		@return {Boolean}          
+	###
 	handle:(record,cb)->
-		cb(this,record) if cb instanceof Function
+		cb(undefined,undefined,record,this) if cb instanceof Function
 		false
+	###
+		handle an array of records
+		@param  {Array<Object>} records 
+		@return {Boolean}      
+	###
 	handleBatch:(records)->
 		@handle(record) for record in records ; return
 	close:->

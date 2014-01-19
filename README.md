@@ -5,9 +5,11 @@ mongolog.js
 
 author mparaiso <mparaiso@online.fr>
 
-inspired by https://github.com/Seldaek/monolog
+heavily inspired by [monolog]'https://github.com/Seldaek/monolog)
 
-Usage
+###Usage
+
+####Basic usage
 
 ```javascript
 	var monolog = require('monolog')
@@ -24,4 +26,45 @@ Usage
 	log.warn('Foo')
 	log.err('Bar')
 	log.debug('Baz')
+```
+
+####Server request logging
+
+```javascript
+	var http, logger, monolog, port, server, webProcessor;
+
+	http = require('http');
+	monolog = require('./index');
+	port = 3000;
+	server = http.createServer();
+	logger = new monolog.Logger("server logger");
+	webProcessor = logger.pushHandler(new monolog.handler.ConsoleLogHandler);
+
+	logger.pushProcessor(new monolog.processor.WebProcessor(server));
+
+	server.on('request', function(req, res) {
+	  logger.info('logging request');
+	  return res.end('ok!');
+	});
+
+	server.listen(3000);
+
+	console.log("listening on port " + port);
+```
+
+#### CouchDB Logging
+
+```javascript
+	var monolog,logger;
+
+	monolog=require('./monolog');
+	logger = new monolog.Logger("couchdb logger");
+	logger.pushHandler(new monolog.handler.CouchDBHandler({
+		host:"localhost",
+		dbname:"logger"
+	}));
+	logger.on('log',function(err,res,record,handler){
+		console.log(arguments);
+	});
+	logger.info('Logging to couchdb');
 ```

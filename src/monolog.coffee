@@ -31,9 +31,12 @@ monolog =
 		NullHandler:require('./handler/NullHandler')
 		TestHandler:require('./handler/TestHandler')
 		StreamHandler:require('./handler/StreamHandler')
+		CouchDBHandler:require('./handler/CouchDBHandler')
 	formatter:
 		LineFormatter:require('./formatter/LineFormatter')
 		NormalizerFormatter:require('./formatter/NormalizerFormatter')
+	processor:
+		WebProcessor:require('./processor/WebProcessor')
 
 module.exports = monolog
 

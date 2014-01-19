@@ -48,14 +48,35 @@
     ConsoleLogHandler: require(&#39;.&#47;handler&#47;ConsoleLogHandler&#39;),
     NullHandler: require(&#39;.&#47;handler&#47;NullHandler&#39;),
     TestHandler: require(&#39;.&#47;handler&#47;TestHandler&#39;),
-    StreamHandler: require(&#39;.&#47;handler&#47;StreamHandler&#39;)
+    StreamHandler: require(&#39;.&#47;handler&#47;StreamHandler&#39;),
+    CouchDBHandler: require(&#39;.&#47;handler&#47;CouchDBHandler&#39;)
   },
   formatter: {
     LineFormatter: require(&#39;.&#47;formatter&#47;LineFormatter&#39;),
     NormalizerFormatter: require(&#39;.&#47;formatter&#47;NormalizerFormatter&#39;)
+  },
+  processor: {
+    WebProcessor: require(&#39;.&#47;processor&#47;WebProcessor&#39;)
   }
 }</code></pre>
-    
+    <div class='docstring'>
+  <p>Usage</p><pre><code class="lang-javascript">    var monolog = require(&#39;monolog&#39;)    , Logger = monolog.Logger    , StreamHandler = monolog.handler.StreamHandler;
+
+    //create a Log channel
+    var log = new Logger(&#39;name&#39;)
+    //create a Log handler
+    log.pushHandler(new StreamHandler(&#39;/path/to/your.log&#39;,Logger.DEBUG))
+    //listen to log events
+    log.on(&quot;log&quot;,function(error,record,handler){console.log(arguments)});
+    // add records to the log
+    log.warn(&#39;Foo&#39;)
+    log.err(&#39;Bar&#39;)
+    log.debug(&#39;Baz&#39;)
+</code></pre>
+
+</div>
+<div class='tags'>
+</div>
   </dd>
   <dt id='module.exports-variable'>
     module.exports
@@ -68,7 +89,7 @@
 </dl>
     </div>
     <div id='footer'>
-  January 17, 14 20:26:24 by
+  January 19, 14 17:23:00 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

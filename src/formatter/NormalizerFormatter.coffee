@@ -1,16 +1,13 @@
-Formatterinterface = require './FormatterInterface'
+AbstractFormatter = require './AbstractFormatter'
 util = require 'util'
 ###
  * Normalizes incoming records to remove objects/resources 
  * so it's easier to dump to various targets
 ###
-class NormalizerFormatter extends Formatterinterface
+class NormalizerFormatter extends AbstractFormatter
 
 	format:(record)->
 		@normalize(Object.create(record))
-
-	formatBatch:(records)->
-		@format(record)  for record in records
 
 	normalize:(record)->
 		record[key]=@doNormalize(value) for key,value of record 

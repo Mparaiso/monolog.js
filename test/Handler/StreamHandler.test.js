@@ -32,7 +32,7 @@ describe('monolog.handler.StreamHandler', function() {
 	it('should log in a file', function(done) {
 		var file, self = this;
 		assert(this.streamHandler.getFormatter());
-		var cb = function(err, record, handler) {
+		var cb = function(err, res,record, handler) {
 			assert(!err);
 			file = fs.readFileSync(self.filename, {
 				encoding: "utf-8"
@@ -47,7 +47,7 @@ describe('monolog.handler.StreamHandler', function() {
 			_stream = fs.createWriteStream(this.filename, {
 				flag: "a"
 			});
-		var cb = function(err, record, handler) {
+		var cb = function(err, res,record, handler) {
 			assert.equal(handler, self.streamHandler);
 			var file = fs.readFileSync(self.filename, {
 				encoding: "utf-8"
@@ -59,8 +59,7 @@ describe('monolog.handler.StreamHandler', function() {
 		this.streamHandler.handle(this.record, cb);
 	});
 	it('should log in the std outstream', function(done) {
-		var self = this,
-			_stream = process.stdout;
+		var _stream = process.stdout;
 		this.streamHandler.stream = _stream;
 		this.streamHandler.handle(this.record, done);
 	});

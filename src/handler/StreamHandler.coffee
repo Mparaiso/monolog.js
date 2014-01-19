@@ -12,7 +12,7 @@ class StreamHandler extends Abstractprocessinghandler
 	# @param {String}  stream
     # @param {Number} level  The minimum logging level at which this handler will be triggered
     # @param {Boolean} bubble Whether the messages that are handled can bubble up the stack or not
-	constructor:(_stream,level,bubble=true)->
+	constructor:(_stream,level=100,bubble=true)->
 		super(level,bubble)
 		if _stream instanceof stream.Stream
 			@stream=_stream
@@ -25,9 +25,8 @@ class StreamHandler extends Abstractprocessinghandler
 			if(@url == null)
 				cb(new Error('Missing stream url')) if cb instanceof Function
 			else
-				fs.writeFile(@url,record.formatted,{flag:"a"},(err,res)=>cb(err,record,this))
+				fs.writeFile(@url,record.formatted,{flag:"a"},(err,res)=>cb(err,res,record,this))
 		else
-			@stream.write(record.formatted,"utf-8",(err,res)=>cb(err,record,this))
-
+			@stream.write(record.formatted,(err,res)=>cb(err,res,record,this))
 
 module.exports = StreamHandler

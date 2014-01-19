@@ -2,23 +2,28 @@
   "name": "monolog",
   "version": "0.0.0",
   "description": "Log with Monolog",
+  "repository":"https://github.com/Mparaiso/monolog.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -R spec --recursive"
   },
   "dependencies":{
-    "coffee-script":"~1.6",
-    "source-map-support":"*",
     "underscore":"*"
   },
   "devDependencies":{
     "mocha":"*",
-    "codo":"*"
+    "codo":"*",
+    "coffee-script":"~1.6",
+    "source-map-support":"*",
+    "sinon":"1.7.3"
   },
   "keywords": [
     "log",
-    "logger"
+    "logger",
+    "mpm",
+    "monolog"
   ],
   "author": "mparaiso",
+  "email":"mparaiso@online.fr",
   "license": "LGPL"
 }

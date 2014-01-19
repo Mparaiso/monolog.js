@@ -5,7 +5,7 @@ events = require 'events'
 	Monolog log channel
 
 	It contains a stack of Handlers and a stack of Processors.
-	and uses them to store records that are added to it.
+	and uses them to kstore records that are added to it.
 ###
 class Logger 
 
@@ -46,7 +46,7 @@ class Logger
 			level_name:Logger.levels[level] or 100
 			channel:@name
 			datetime: new Date
-			extra:[]
+			extra:{toString:->'[object Extra]'}
 		handlerKey = null
 		for handler,i in @handlers
 			if(handler.isHandling(record)) then handlerKey = i ; break
@@ -54,7 +54,7 @@ class Logger
 		if handlerKey is null then return false
 		record = processor(record) for processor in @processors
 
-		while @handlers[handlerKey] and false == @handlers[handlerKey].handle(record,(err,r,handler)=>@emit(Logger.LOG,err,record,handler))
+		while @handlers[handlerKey] and false == @handlers[handlerKey].handle(record,(err,res,record,handler)=>@emit(Logger.LOG,err,res,record,handler))
 			handlerKey++
 		true
 	debug:(message,context)->
