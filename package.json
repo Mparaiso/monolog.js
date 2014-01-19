@@ -11,6 +11,7 @@
     "underscore":"*"
   },
   "devDependencies":{
+    "chai":"*",
     "mocha":"*",
     "codo":"*",
     "coffee-script":"~1.6",

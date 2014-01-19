@@ -12,4 +12,12 @@ commit: build
 	@git commit -am"auto-update `date`" | :
 push: doc commit 
 	@git push origin --all
+push-gh-pages: doc
+	git checkout gh-pages
+	git checkout master/doc
+	mv doc/* .
+	git add .
+	git commit -am"doc update `date`" | : 
+	git push origin gh-pages
+	git checkout master
 .PHONY: commit test push doc publish
