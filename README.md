@@ -5,7 +5,7 @@ mongolog.js
 
 author mparaiso <mparaiso@online.fr>
 
-heavily inspired by [monolog]'https://github.com/Seldaek/monolog)
+heavily inspired by [monolog](https://github.com/Seldaek/monolog)
 
 ###Usage
 

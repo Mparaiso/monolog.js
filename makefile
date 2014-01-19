@@ -8,6 +8,6 @@ doc: build
 commit: build
 	@git add .
 	@git commit -am"auto-update `date`" | :
-push: commit 
+push: doc commit 
 	@git push origin --all
-.PHONY: commit test push doc build
+.PHONY: commit test push doc

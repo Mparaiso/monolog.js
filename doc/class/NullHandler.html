@@ -46,7 +46,7 @@
       <a href='#handle-dynamic'>
         #
 (void)
-<b>handle</b><span>(record)</span>
+<b>handle</b><span>(record, cb)</span>
       </a>
     </span>
     <span class='desc'>
@@ -73,6 +73,7 @@
           <a href='../class/AbstractHandler.html#getLevel-dynamic'>#getLevel</a>
           <a href='../class/AbstractHandler.html#setBubble-dynamic'>#setBubble</a>
           <a href='../class/AbstractHandler.html#getBubble-dynamic'>#getBubble</a>
+          <a href='../class/AbstractHandler.html#processRecord-dynamic'>#processRecord</a>
         </p>
       </h2>
       <h2>Instance Method Details</h2>
@@ -81,11 +82,11 @@
     <p class='signature' id='handle-dynamic'>
       #
 (void)
-<b>handle</b><span>(record)</span>
+<b>handle</b><span>(record, cb)</span>
       <br>
     </p>
     <div class='docstring'>
-  <p>Any record it can handle will be thrown away. This can be used    to put on top of an existing stack to override it temporarily.</p>
+  <p>Any record it can handle will be thrown away. This can be used    to put on top of an existing stack to override it temporarily.    @param  {Object}   record     @param  {Function} cb         @return {Boolean}</p>
 </div>
 <div class='tags'>
 </div>
@@ -93,7 +94,7 @@
 </div>
     </div>
     <div id='footer'>
-  January 19, 14 17:23:00 by
+  January 19, 14 18:05:05 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

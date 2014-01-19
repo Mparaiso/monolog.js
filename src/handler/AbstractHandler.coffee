@@ -21,7 +21,7 @@ class AbstractHandler
 		record.level>=@level
 	###
 		handle a record
-		@param  {Object}   record 
+		@param  {monolog.Record}   record 
 		@param  {Function} cb     
 		@return {Boolean}          
 	###
@@ -47,5 +47,11 @@ class AbstractHandler
 	getLevel:->@level
 	setBubble:(@bubble)->
 	getBubble:->@bubble
+
+	processRecord:(record)->
+		if @processors
+			for processor in @processors     
+				record = processor(record)
+		return record
 
 module.exports = AbstractHandler

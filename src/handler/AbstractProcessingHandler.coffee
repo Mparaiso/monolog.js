@@ -1,8 +1,7 @@
-AbstractHandler = require('./AbstractHandler')
+AbstractHandler = require './AbstractHandler'
 
 class AbstractProcessingHandler extends AbstractHandler
 	
-	# @return {Boolean}
 	handle:(record,cb)->
 		if @isHandling(record)
 			record = @processRecord(record)
@@ -18,13 +17,14 @@ class AbstractProcessingHandler extends AbstractHandler
 		else
 			false
 
+	###
+		writes a record
+		@param  {monolog.Record}   record 
+		@param  {Function} cb     
+		@return {Boolean}         
+	###
 	write:(record,cb)->
 		cb(undefined,undefined,record,this) if cb instanceof Function
-
-	processRecord:(record)->
-		if @processors
-			for processor in @processors     
-				record = processor(record)
-		return record
+		true
 
 module.exports =  AbstractProcessingHandler

@@ -5,7 +5,7 @@ var monolog=require('../../index');
 var assert=require('assert');
 var stream=require('stream');
 var http=require('http');
-var request=require('request');
+
 describe('monolog.processor.CouchDBHandler',function(){
 	beforeEach(function(){
 		this.record={
@@ -25,7 +25,6 @@ describe('monolog.processor.CouchDBHandler',function(){
 	it('should write record in couchdb',function(done){
 		this.couchDBHandler.handle(this.record,function(err,res){
 			assert(!err);
-			console.log(arguments);
 			done();
 		});
 

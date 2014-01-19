@@ -44,7 +44,7 @@
     <span class='signature'>
       <a href='#isHandling-dynamic'>
         #
-(Boolean)
+(void)
 <b>isHandling</b><span>(record)</span>
       </a>
     </span>
@@ -61,6 +61,8 @@
       </a>
     </span>
     <span class='desc'>
+      <p>handle a record     @param  {monolog.Record}   record 
+    @param  {Function} cb<br>    @return {Boolean}</p>
     </span>
   </li>
   <li>
@@ -72,6 +74,8 @@
       </a>
     </span>
     <span class='desc'>
+      <p>handle an array of records     @param  {Array<Object>} records 
+    @return {Boolean}</p>
     </span>
   </li>
   <li>
@@ -173,6 +177,17 @@
     <span class='desc'>
     </span>
   </li>
+  <li>
+    <span class='signature'>
+      <a href='#processRecord-dynamic'>
+        #
+(void)
+<b>processRecord</b><span>(record)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
 </ul>
       <h2>Constructor Details</h2>
       <div class='methods'>
@@ -195,32 +210,20 @@
   <div class='method_details'>
     <p class='signature' id='isHandling-dynamic'>
       #
-(Boolean)
+(void)
 <b>isHandling</b><span>(record)</span>
       <br>
     </p>
     <div class='docstring'>
   <p>Checks whether the given record will be handled by this handler.
-This is mostly done for performance reasons, to avoid calling processors for nothing.
-Handlers should still check the record levels within handle(), returning false in isHandling()
-is no guarantee that handle() will not be called, and isHandling() might not be called
-for a given record.</p>
+    This is mostly done for performance reasons, to avoid calling processors for nothing.
+    Handlers should still check the record levels within handle(), returning false in isHandling()
+    is no guarantee that handle() will not be called, and isHandling() might not be called
+    for a given record.
+    @param {Array} record
+    @return {Boolean}</p>
 </div>
 <div class='tags'>
-  <h3>Parameters:</h3>
-  <ul class='param'>
-    <li>
-      <span class='name'>record</span>
-      <span class='type'>
-        (<tt>Array</tt>)
-      </span>
-    </li>
-  </ul>
-  <h3>Returns:</h3>
-  <ul class='return'>
-    <li>
-      <span class='type'></span><tt>Boolean</tt></li>
-  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -230,7 +233,13 @@ for a given record.</p>
 <b>handle</b><span>(record, cb)</span>
       <br>
     </p>
-    
+    <div class='docstring'>
+  <p>handle a record
+    @param  {monolog.Record}   record 
+    @param  {Function} cb<br>    @return {Boolean}</p>
+</div>
+<div class='tags'>
+</div>
   </div>
   <div class='method_details'>
     <p class='signature' id='handleBatch-dynamic'>
@@ -239,7 +248,13 @@ for a given record.</p>
 <b>handleBatch</b><span>(records)</span>
       <br>
     </p>
-    
+    <div class='docstring'>
+  <p>handle an array of records
+    @param  {Array<Object>} records 
+    @return {Boolean}</p>
+</div>
+<div class='tags'>
+</div>
   </div>
   <div class='method_details'>
     <p class='signature' id='close-dynamic'>
@@ -322,10 +337,19 @@ for a given record.</p>
     </p>
     
   </div>
+  <div class='method_details'>
+    <p class='signature' id='processRecord-dynamic'>
+      #
+(void)
+<b>processRecord</b><span>(record)</span>
+      <br>
+    </p>
+    
+  </div>
 </div>
     </div>
     <div id='footer'>
-  January 19, 14 17:23:00 by
+  January 19, 14 18:05:05 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

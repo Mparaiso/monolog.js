@@ -1,8 +1,8 @@
 "use strict"
 
-Abstractprocessinghandler = require './AbstractProcessingHandler'
 stream = require 'stream'
 fs = require 'fs'
+Abstractprocessinghandler = require './AbstractProcessingHandler'
 
 #Stores to any stream resource
 #
@@ -19,7 +19,6 @@ class StreamHandler extends Abstractprocessinghandler
 		else
 			@url=_stream
 
-	# {@inheritdoc}
 	write:(record,cb)->
 		if(@stream is undefined)
 			if(@url == null)

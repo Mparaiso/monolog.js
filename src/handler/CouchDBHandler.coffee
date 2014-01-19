@@ -11,11 +11,7 @@ JSONFormatter = require '../formatter/JSONFormatter'
 # CouchDB handler
 class CouchDBHandler extends AbstractProcessingHandler
 
-	#@options {String} host
-	#@options {String} dbname
-	#@options {Number} port
-	#@options {String} username
-	#@options {String} password
+
 	defaultOptions:
 		host:'localhost'
 		dbname:'logger'
@@ -23,6 +19,14 @@ class CouchDBHandler extends AbstractProcessingHandler
 
 	request:http.request
 
+	#@param {Object} options
+	#@option options {String} host
+	#@option options {String} dbname
+	#@option options {Number} port
+	#@option options {String} username
+	#@option options {String} password
+	#@param {Number} level
+	#@param {Boolean} bubble
 	constructor:(options,level=100,bubble=true)->
 		@options = mixin({},@defaultOptions,options)
 		super(level,bubble)
@@ -41,7 +45,6 @@ class CouchDBHandler extends AbstractProcessingHandler
 		return @_streamOptions
 
 	#@private
-	#@overload
 	write:(record,cb=noop)->
 		
 		r = @request @getStreamOptions(),(res)=>

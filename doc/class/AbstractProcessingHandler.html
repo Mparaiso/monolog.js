@@ -50,7 +50,7 @@
     <span class='signature'>
       <a href='#handle-dynamic'>
         #
-(Boolean)
+(void)
 <b>handle</b><span>(record, cb)</span>
       </a>
     </span>
@@ -62,21 +62,12 @@
       <a href='#write-dynamic'>
         #
 (void)
-<b>write</b><span>(record)</span>
+<b>write</b><span>(record, cb)</span>
       </a>
     </span>
     <span class='desc'>
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#processRecord-dynamic'>
-        #
-(void)
-<b>processRecord</b><span>(record)</span>
-      </a>
-    </span>
-    <span class='desc'>
+      <p>writes a record     @param  {monolog.Record}   record 
+    @param  {Function} cb<br>    @return {Boolean}</p>
     </span>
   </li>
 </ul>
@@ -99,6 +90,7 @@
           <a href='../class/AbstractHandler.html#getLevel-dynamic'>#getLevel</a>
           <a href='../class/AbstractHandler.html#setBubble-dynamic'>#setBubble</a>
           <a href='../class/AbstractHandler.html#getBubble-dynamic'>#getBubble</a>
+          <a href='../class/AbstractHandler.html#processRecord-dynamic'>#processRecord</a>
         </p>
       </h2>
       <h2>Instance Method Details</h2>
@@ -106,40 +98,31 @@
   <div class='method_details'>
     <p class='signature' id='handle-dynamic'>
       #
-(Boolean)
+(void)
 <b>handle</b><span>(record, cb)</span>
       <br>
     </p>
-    <div class='tags'>
-  <h3>Returns:</h3>
-  <ul class='return'>
-    <li>
-      <span class='type'></span><tt>Boolean</tt></li>
-  </ul>
-</div>
+    
   </div>
   <div class='method_details'>
     <p class='signature' id='write-dynamic'>
       #
 (void)
-<b>write</b><span>(record)</span>
+<b>write</b><span>(record, cb)</span>
       <br>
     </p>
-    
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='processRecord-dynamic'>
-      #
-(void)
-<b>processRecord</b><span>(record)</span>
-      <br>
-    </p>
-    
+    <div class='docstring'>
+  <p>writes a record
+    @param  {monolog.Record}   record 
+    @param  {Function} cb<br>    @return {Boolean}</p>
+</div>
+<div class='tags'>
+</div>
   </div>
 </div>
     </div>
     <div id='footer'>
-  January 19, 14 17:23:00 by
+  January 19, 14 18:05:05 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>
