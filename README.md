@@ -14,6 +14,10 @@ author mparaiso <mparaiso@online.fr>
 
 heavily inspired by [monolog](https://github.com/Seldaek/monolog)
 
+###Installation
+
+	npm install -g monolog
+
 ###Usage
 
 ####Basic usage

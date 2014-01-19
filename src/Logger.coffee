@@ -86,6 +86,7 @@ class Logger
 	crit:@::critical
 	err:@::error
 	emer:@::emergency
+	warn:@::warning
 		
 
 module.exports = Logger

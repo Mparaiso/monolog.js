@@ -1,6 +1,6 @@
 {
   "name": "monolog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Log with Monolog",
   "repository":"https://github.com/Mparaiso/monolog.js",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "codo":"*",
     "coffee-script":"~1.6",
     "source-map-support":"*",
-    "sinon":"1.7.3"
+    "sinon":"~1.7"
   },
   "keywords": [
     "log",

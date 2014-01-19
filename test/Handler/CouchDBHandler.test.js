@@ -15,9 +15,9 @@ describe('monolog.processor.CouchDBHandler',function(){
 			level:100
 		};
 		this.options={
-			host:"localhost",
+			host:process.env.COUCHDB_HOST||"localhost",
 			dbname:"logger",
-			port:5984
+			port:process.env.COUCHDB_PORT||5984
 		};
 		this.couchDBHandler= new monolog.handler.CouchDBHandler(this.options);
 	});
@@ -25,6 +25,8 @@ describe('monolog.processor.CouchDBHandler',function(){
 	it('should write record in couchdb',function(done){
 		this.couchDBHandler.handle(this.record,function(err,res){
 			assert(!err);
+			assert(res.id);
+			assert(res.ok);
 			done();
 		});
 
