@@ -1,9 +1,14 @@
 mongolog.js
 ===========
 
+[![NPM](https://nodei.co/npm/monolog.png)](https://nodei.co/npm/monolog/)
+
+
 [![Build Status](https://travis-ci.org/Mparaiso/monolog.js.png?branch=master)](https://travis-ci.org/Mparaiso/monolog.js)
 
-###monolog for javascript and node
+
+Logging everything everywhere, monolog for javascript and node
+--------------------------------------------------------------
 
 author mparaiso <mparaiso@online.fr>
 
