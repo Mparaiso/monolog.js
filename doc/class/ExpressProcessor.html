@@ -19,23 +19,23 @@
       Index
     </a>
     &raquo;
-    <span class='title'>WebProcessor</span>
+    <span class='title'>ExpressProcessor</span>
   </div>
 </div>
     <div id='content'>
       <h1>
         Class:
-        WebProcessor
+        ExpressProcessor
       </h1>
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>src\processor\WebProcessor.coffee</td>
+          <td>src\processor\ExpressProcessor.coffee</td>
         </tr>
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>Injects url/method and remote IP of the current web request in all records</p>
+  <p>get datas from express request</p>
 </div>
 <div class='tags'>
 </div>
@@ -44,25 +44,15 @@
   <div class='method_details'>
     <p class='signature' id='constructor-dynamic'>
       #
-(monolog.processor.Callback)
-<b>constructor</b><span>(server)</span>
+(void)
+<b>constructor</b><span>(express)</span>
       <br>
     </p>
-    <div class='tags'>
-  <h3>Parameters:</h3>
-  <ul class='param'>
-    <li>
-      <span class='name'>server</span>
-      <span class='type'>
-        (<tt>http.Server</tt>)
-      </span>
-    </li>
-  </ul>
-  <h3>Returns:</h3>
-  <ul class='return'>
-    <li>
-      <span class='type'></span><tt>monolog.processor.Callback</tt></li>
-  </ul>
+    <div class='docstring'>
+  <p>@param  {Express} express 
+    @return {Function}</p>
+</div>
+<div class='tags'>
 </div>
   </div>
 </div>
