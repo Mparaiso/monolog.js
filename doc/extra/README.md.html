@@ -34,7 +34,7 @@
         </p>
       </nav>
       <div id='filecontents'>
-        <h1 id="mongolog-js">mongolog.js</h1><p><a href="https://nodei.co/npm/monolog/"><img src="https://nodei.co/npm/monolog.png" alt="NPM"></a></p><p><a href="https://travis-ci.org/Mparaiso/monolog.js"><img src="https://travis-ci.org/Mparaiso/monolog.js.png?branch=master" alt="Build Status"></a></p><h2 id="log-everything-everywhere-monolog-for-javascript-and-node">Log everything everywhere, monolog for javascript and node</h2><p>author mparaiso <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#109;&#x70;&#x61;&#114;&#97;&#x69;&#115;&#111;&#x40;&#111;&#x6e;&#x6c;&#x69;&#x6e;&#x65;&#46;&#x66;&#x72;">&#109;&#x70;&#x61;&#114;&#97;&#x69;&#115;&#111;&#x40;&#111;&#x6e;&#x6c;&#x69;&#x6e;&#x65;&#46;&#x66;&#x72;</a></p><p>heavily inspired by <a href="https://github.com/Seldaek/monolog">monolog</a></p><h3 id="installation">Installation</h3>
+        <h1 id="mongolog-js">mongolog.js</h1><p><a href="https://nodei.co/npm/monolog/"><img src="https://nodei.co/npm/monolog.png" alt="NPM"></a></p><p><a href="https://travis-ci.org/Mparaiso/monolog.js"><img src="https://travis-ci.org/Mparaiso/monolog.js.png?branch=master" alt="Build Status"></a></p><h2 id="log-everything-everywhere-monolog-for-javascript-and-node">Log everything everywhere, monolog for javascript and node</h2><p>author mparaiso <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#109;&#x70;&#x61;&#114;&#x61;&#x69;&#x73;&#x6f;&#x40;&#x6f;&#110;&#x6c;&#105;&#110;&#101;&#x2e;&#x66;&#x72;">&#109;&#x70;&#x61;&#114;&#x61;&#x69;&#x73;&#x6f;&#x40;&#x6f;&#110;&#x6c;&#105;&#110;&#101;&#x2e;&#x66;&#x72;</a></p><p>heavily inspired by <a href="https://github.com/Seldaek/monolog">monolog</a></p><h3 id="installation">Installation</h3>
 <pre><code>npm install -g monolog
 </code></pre><h3 id="usage">Usage</h3>
 <h4 id="basic-usage">Basic usage</h4>
@@ -88,11 +88,47 @@
     });
     logger.info(&#39;Logging to couchdb&#39;);
 </code></pre>
+<h4 id="creating-a-simple-logger-middleware-for-express">Creating a simple logger middleware for express</h4><p>in a file called logger.js</p><pre><code class="lang-javascript">     &quot;use strict&quot;;
+     /**
+      * monolog middleware for connect and express
+      * USAGE
+      * =====
+      * var app=express()
+      * app.use(logger.middleware(app,&quot;debugging&quot;));
+      * 
+      */
+     var monolog = require(&#39;monolog&#39;);
+     /**
+      * @type {monolog.Logger}
+      */
+     var logger = new monolog.Logger(&quot;express logger&quot;);
+
+     logger.addHandler(new monolog.handler.StreamHandler(__dirname + &quot;/../temp/log.txt&quot;));
+     /**
+      * [middleware description]
+      * @param  {Express} app     express app
+      * @param  {String} message log message
+      * @return {Function}         middleware
+      */
+     logger.middleware = function(app, message) {
+         message = message || &quot;debug&quot;;
+         logger.addProcessor(new monolog.processor.ExpressProcessor(app));
+         app.set(&#39;logger&#39;, logger);
+         var F =  function(req, res, next) {
+             logger.debug(message);
+             next();
+         };
+         F.logger = logger;
+         return F;
+     };
+
+     module.exports = logger;
+</code></pre>
 
       </div>
     </div>
     <div id='footer'>
-  January 20, 14 16:43:04 by
+  January 20, 14 16:46:15 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>
