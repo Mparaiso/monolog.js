@@ -37,6 +37,7 @@ monolog =
 		NormalizerFormatter:require('./formatter/NormalizerFormatter')
 	processor:
 		WebProcessor:require('./processor/WebProcessor')
+		ExpressProcessor:require('./processor/ExpressProcessor')
 
 module.exports = monolog
 

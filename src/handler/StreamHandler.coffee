@@ -24,7 +24,7 @@ class StreamHandler extends Abstractprocessinghandler
 			if(@url == null)
 				cb(new Error('Missing stream url')) if cb instanceof Function
 			else
-				fs.writeFile(@url,record.formatted,{flag:"a"},(err,res)=>cb(err,res,record,this))
+				fs.writeFile(@url,record.formatted+"\r\n",{flag:"a"},(err,res)=>cb(err,res,record,this))
 		else
 			@stream.write(record.formatted,(err,res)=>cb(err,res,record,this))
 

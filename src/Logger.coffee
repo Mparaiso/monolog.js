@@ -87,7 +87,8 @@ class Logger
 	err:@::error
 	emer:@::emergency
 	warn:@::warning
-		
+	addProcessor:@::pushProcessor
+	addHandler:@::pushHandler
 
 module.exports = Logger
 

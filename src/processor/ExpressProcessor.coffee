@@ -21,6 +21,7 @@ class ExpressProcessor
 		F.express = express
 		express.use (req,res,next)->
 			F.request = 
+				method:req.method
 				params:req.params
 				query:req.query
 				body:req.body
@@ -38,3 +39,5 @@ class ExpressProcessor
 				secure:req.secure
 			next()
 		return F
+
+module.exports = ExpressProcessor
