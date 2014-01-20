@@ -1,18 +1,19 @@
 mongolog.js
 ===========
 
+https://github.com/Mparaiso/monolog.js
+
 [![NPM](https://nodei.co/npm/monolog.png)](https://nodei.co/npm/monolog/)
 
 
 [![Build Status](https://travis-ci.org/Mparaiso/monolog.js.png?branch=master)](https://travis-ci.org/Mparaiso/monolog.js)
 
 
-Log everything everywhere, monolog for javascript and node
---------------------------------------------------------------
+###Log everything everywhere, monolog for javascript and node
 
 author mparaiso <mparaiso@online.fr>
 
-heavily inspired by [monolog](https://github.com/Seldaek/monolog)
+heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 
 ###Installation
 
