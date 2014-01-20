@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>CoffeeScript API Documentation</title>
+  <script src='../javascript/application.js'></script>
+  <script src='../javascript/search.js'></script>
+  <link rel='stylesheet' href='../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../extra/README.md.html' title='Monolog'>
+      Monolog
+    </a>
+    &raquo;
+    <a href='../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>Logger</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        Logger
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>src\Logger.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>Monolog log channel</p><p>It contains a stack of Handlers and a stack of Processors.
+and uses them to kstore records that are added to it.</p>
+</div>
+<div class='tags'>
+</div>
+      <h2>Variables Summary</h2>
+      <dl class='constants'>
+  <dt id='LOG-variable'>
+    LOG
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>&quot;log&quot;</code></pre>
+    
+  </dd>
+  <dt id='DEBUG-variable'>
+    DEBUG
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>100</code></pre>
+    
+  </dd>
+  <dt id='INFO-variable'>
+    INFO
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>200</code></pre>
+    
+  </dd>
+  <dt id='NOTICE-variable'>
+    NOTICE
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>250</code></pre>
+    
+  </dd>
+  <dt id='WARNING-variable'>
+    WARNING
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>300</code></pre>
+    
+  </dd>
+  <dt id='ERROR-variable'>
+    ERROR
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>400</code></pre>
+    
+  </dd>
+  <dt id='CRITICAL-variable'>
+    CRITICAL
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>500</code></pre>
+    
+  </dd>
+  <dt id='ALERT-variable'>
+    ALERT
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>550</code></pre>
+    
+  </dd>
+  <dt id='EMERGENCY-variable'>
+    EMERGENCY
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>600</code></pre>
+    
+  </dd>
+  <dt id='API-variable'>
+    API
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>1</code></pre>
+    
+  </dd>
+  <dt id='levels-variable'>
+    levels
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>{
+  100: &#39;DEBUG&#39;,
+  200: &#39;INFO&#39;,
+  250: &#39;NOTICE&#39;,
+  300: &#39;WARNING&#39;,
+  400: &#39;ERROR&#39;,
+  500: &#39;CRITICAL&#39;,
+  550: &#39;ALERT&#39;,
+  600: &#39;EMERGENCY&#39;
+}</code></pre>
+    
+  </dd>
+  <dt id='crit-variable'>
+    crit
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'></code></pre>
+    
+  </dd>
+  <dt id='err-variable'>
+    err
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'></code></pre>
+    
+  </dd>
+  <dt id='emer-variable'>
+    emer
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'></code></pre>
+    
+  </dd>
+  <dt id='warn-variable'>
+    warn
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'></code></pre>
+    
+  </dd>
+</dl>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#getName-dynamic'>
+        #
+(void)
+<b>getName</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#pushHandler-dynamic'>
+        #
+(void)
+<b>pushHandler</b><span>(handler)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#popHandler-dynamic'>
+        #
+(void)
+<b>popHandler</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#pushProcessor-dynamic'>
+        #
+(void)
+<b>pushProcessor</b><span>(processor)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#popProcessor-dynamic'>
+        #
+(void)
+<b>popProcessor</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#addRecord-dynamic'>
+        #
+(void)
+<b>addRecord</b><span>(level, message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      add a log record 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#debug-dynamic'>
+        #
+(void)
+<b>debug</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#info-dynamic'>
+        #
+(void)
+<b>info</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#notice-dynamic'>
+        #
+(void)
+<b>notice</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#warning-dynamic'>
+        #
+(void)
+<b>warning</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#error-dynamic'>
+        #
+(void)
+<b>error</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#crititcal-dynamic'>
+        #
+(void)
+<b>crititcal</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#alert-dynamic'>
+        #
+(void)
+<b>alert</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#emergency-dynamic'>
+        #
+(void)
+<b>emergency</b><span>(message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#isHandling-dynamic'>
+        #
+(void)
+<b>isHandling</b><span>(level)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Checks whether the Logger has a handler that listens on the given level 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#log-dynamic'>
+        #
+(void)
+<b>log</b><span>(level, message, context)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Adds a log record at an arbitrary level. 
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-dynamic'>
+      #
+(void)
+<b>constructor</b><span>(name = &quot;&quot;, handlers = [], processors = [])</span>
+      <br>
+    </p>
+    
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='getName-dynamic'>
+      #
+(void)
+<b>getName</b><span>()</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='pushHandler-dynamic'>
+      #
+(void)
+<b>pushHandler</b><span>(handler)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='popHandler-dynamic'>
+      #
+(void)
+<b>popHandler</b><span>()</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='pushProcessor-dynamic'>
+      #
+(void)
+<b>pushProcessor</b><span>(processor)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='popProcessor-dynamic'>
+      #
+(void)
+<b>popProcessor</b><span>()</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='addRecord-dynamic'>
+      #
+(void)
+<b>addRecord</b><span>(level, message, context)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>add a log record</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='debug-dynamic'>
+      #
+(void)
+<b>debug</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='info-dynamic'>
+      #
+(void)
+<b>info</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='notice-dynamic'>
+      #
+(void)
+<b>notice</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='warning-dynamic'>
+      #
+(void)
+<b>warning</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='error-dynamic'>
+      #
+(void)
+<b>error</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='crititcal-dynamic'>
+      #
+(void)
+<b>crititcal</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='alert-dynamic'>
+      #
+(void)
+<b>alert</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='emergency-dynamic'>
+      #
+(void)
+<b>emergency</b><span>(message, context)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='isHandling-dynamic'>
+      #
+(void)
+<b>isHandling</b><span>(level)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Checks whether the Logger has a handler that listens on the given level</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='log-dynamic'>
+      #
+(void)
+<b>log</b><span>(level, message, context)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Adds a log record at an arbitrary level. ###</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  January 19, 14 19:00:40 by
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.0.3
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+  &#10034;
+  <a href='https://mksoft.ch' target='_parent'>mksoft.ch</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>

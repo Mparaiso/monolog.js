@@ -7,7 +7,7 @@ mongolog.js
 [![Build Status](https://travis-ci.org/Mparaiso/monolog.js.png?branch=master)](https://travis-ci.org/Mparaiso/monolog.js)
 
 
-Logging everything everywhere, monolog for javascript and node
+Log everything everywhere, monolog for javascript and node
 --------------------------------------------------------------
 
 author mparaiso <mparaiso@online.fr>
@@ -49,8 +49,8 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog)
 	port = 3000;
 	server = http.createServer();
 	logger = new monolog.Logger("server logger");
-	webProcessor = logger.pushHandler(new monolog.handler.ConsoleLogHandler);
-
+	logger.pushHandler(new monolog.handler.ConsoleLogHandler);
+	// a WebProcessor extracts data from each request and add it to the log records
 	logger.pushProcessor(new monolog.processor.WebProcessor(server));
 
 	server.on('request', function(req, res) {
