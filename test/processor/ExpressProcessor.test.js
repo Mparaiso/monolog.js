@@ -16,7 +16,7 @@ app = {
 };
 
 
-describe("monolo.processor.ExpressProcessor", function() {
+describe("monolog.processor.ExpressProcessor", function() {
 	beforeEach(function() {
 		this.record = {};
 		this.processor = new ExpressProcessor(app);

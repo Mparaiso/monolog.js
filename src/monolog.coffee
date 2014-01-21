@@ -10,6 +10,7 @@ monolog =
 		TestHandler:require('./handler/TestHandler')
 		StreamHandler:require('./handler/StreamHandler')
 		CouchDBHandler:require('./handler/CouchDBHandler')
+		MongoDBHandler:require('./handler/MongoDBHandler')
 	formatter:
 		LineFormatter:require('./formatter/LineFormatter')
 		NormalizerFormatter:require('./formatter/NormalizerFormatter')

@@ -5,7 +5,7 @@ cover: build
 #@cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 build:
 	@./node_modules/.bin/coffee -m -b -o lib -c src 
-publish:
+publish: test
 	@npm publish
 #generate documentation
 doc: build

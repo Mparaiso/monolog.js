@@ -25,6 +25,7 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 
 - ConsoleLogHandler : log to console
 - CouchDBHandler : log to CouchDB
+- MongoDBHandler : log to MongoDB
 - StreamHandler : log to a stream
 - TestHandler : log to an array
 - NullHandler : null logging
@@ -66,7 +67,7 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 	var http, logger, monolog, port, server, webProcessor;
 
 	http = require('http');
-	monolog = require('./index');
+	monolog = require('monolog');
 	port = 3000;
 	server = http.createServer();
 	logger = new monolog.Logger("server logger");
@@ -89,7 +90,7 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 ```javascript
 	var monolog,logger;
 
-	monolog=require('./monolog');
+	monolog=require('monolog');
 	logger = new monolog.Logger("couchdb logger");
 	logger.pushHandler(new monolog.handler.CouchDBHandler({
 		host:"localhost",
@@ -99,6 +100,18 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 		console.log(arguments);
 	});
 	logger.info('Logging to couchdb');
+```
+#### MongoDB Logging ( with mongodb package)
+
+```javascript
+	var monolog,logger,mongodb;
+	monolog=require('monolog');
+	mongodb = require('mongodb').MongoClient.connect("localhost",function(err,db){
+		logger=new monolog.Logger("channel name");
+		logger.pushHandler(new monolog.handler.MongoDBHandler(db,"log_collection"));
+		logger.info("log message");
+	});
+
 ```
 
 #### Creating a simple logger middleware for express
