@@ -21,6 +21,24 @@ heavily inspired by [monolog](https://github.com/Seldaek/monolog) PHP library
 
 	npm install -g monolog
 
+####Handlers
+
+- ConsoleLogHandler : log to console
+- CouchDBHandler : log to CouchDB
+- StreamHandler : log to a stream
+- TestHandler : log to an array
+- NullHandler : null logging
+
+####Processors
+
+- ExpressProcessor : get express request data
+- WebProcessor : get server data
+
+####Formatters
+
+- JSONFormatter : format log to JSON
+- LineFormatter : format log to a string
+
 ###Usage
 
 ####Basic usage

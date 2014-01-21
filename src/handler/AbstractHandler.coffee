@@ -6,7 +6,7 @@ class AbstractHandler
 	 	Base Handler class providing the Handler structure
 	###
 	constructor:(@level=Logger.DEBUG,@bubble=true)->
-		processors= []
+		@processors= []
 
 	###
 	    Checks whether the given record will be handled by this handler.

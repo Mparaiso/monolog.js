@@ -33,9 +33,9 @@ class Logger
 
 	constructor:(@name="",@handlers=[],@processors=[])->
 	getName:->@name
-	pushHandler:(handler)->@handlers.unshift(handler)
+	pushHandler:(handler)->@handlers.unshift(handler);this
 	popHandler:->@handlers.pop()
-	pushProcessor:(processor)->@processors.unshift(processor)
+	pushProcessor:(processor)->@processors.unshift(processor);this
 	popProcessor:->@processors.pop()
 	#add a log record
 	addRecord:(level,message,context)->

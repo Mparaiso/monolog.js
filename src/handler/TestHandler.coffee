@@ -9,5 +9,7 @@ class TestHandler extends Abstractprocessinghandler
 		@records = []
 
 	write:(record,cb)->
-		@records.push(record)
-		cb(undefined,record,handler) if cb instanceof Function
+		@records.push(record.formatted)
+		cb(undefined,@records,record,this) if cb instanceof Function
+
+module.exports=TestHandler
