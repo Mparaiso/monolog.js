@@ -10,7 +10,7 @@ sinon = require('sinon');
 
 
 before(function(done) {
-	mongo.MongoClient.connect(process.env.MONGODB_TEST || 'mongodb://localhost/test', function(err, res) {
+	mongo.MongoClient.connect(process.env.MONGODB_TEST || 'mongodb://travis:test@localhost/test', function(err, res) {
 		if (err) {
 			throw err;
 		}

@@ -8,3 +8,4 @@ services:
   - mongodb
 before_script:
   - curl -X PUT localhost:5984/logger
+  - mongo test --eval 'db.addUser("travis", "test");'
