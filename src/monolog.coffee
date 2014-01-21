@@ -17,6 +17,13 @@ monolog =
 		WebProcessor:require('./processor/WebProcessor')
 		ExpressProcessor:require('./processor/ExpressProcessor')
 
+###
+	create Logger
+	@param {String} name
+	@param {Array} handlers
+	@param {Array} processors
+	@return {monolog.Logger} 
+###
 monolog.create = -> new monolog.Logger(arguments...)
 
 module.exports = monolog
