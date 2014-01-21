@@ -67,7 +67,7 @@ class Logger
 		@addRecord(Logger.WARNING,message,context)
 	error:(message,context)->
 		@addRecord(Logger.ERROR,message,context)
-	crititcal:(message,context)->
+	critical:(message,context)->
 		@addRecord(Logger.CRITICAL,message,context)
 	alert:(message,context)->
 		@addRecord(Logger.ALERT,message,context)

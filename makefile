@@ -13,6 +13,6 @@ doc: build
 commit: build
 	@git add .
 	@git commit -am"auto-update `date`" | :
-push: doc commit 
+push: test doc commit 
 	@git push origin master
 .PHONY: commit test push doc publish

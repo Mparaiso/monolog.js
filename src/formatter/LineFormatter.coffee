@@ -9,6 +9,7 @@ class LineFormatter extends NormalizerFormatter
 	@SIMPLE_FORMAT= _.template("[<%-datetime %>] <%-channel%>.<%-level_name%>: <%=message%> <%=context%> <%=extra%> \n")
 	
 	constructor:(@template=LineFormatter.SIMPLE_FORMAT)->
+		super
 
 	format:(record)->
 		vars= super(record)

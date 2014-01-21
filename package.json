@@ -1,6 +1,6 @@
 {
   "name": "monolog",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Log with Monolog",
   "repository":"https://github.com/Mparaiso/monolog.js",
   "main": "index.js",
