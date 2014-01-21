@@ -5,7 +5,7 @@
   "repository":"https://github.com/Mparaiso/monolog.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec --recursive"
+    "test": "make test"
   },
   "dependencies":{
     "underscore":"*"
@@ -16,7 +16,9 @@
     "codo":"*",
     "coffee-script":"~1.6",
     "source-map-support":"*",
-    "sinon":"~1.7"
+    "sinon":"~1.7",
+    "istanbul":"*",
+    "coveralls":"*"
   },
   "keywords": [
     "log",

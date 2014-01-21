@@ -38,7 +38,7 @@ class CouchDBHandler extends AbstractProcessingHandler
 			method:"POST"
 			port:if @options.port then @options.port else 80
 			path:"/"+@options.dbname
-			auth: if @options.username && @options.password then "#{@options.username}:#{@options.password}" else ""
+			auth: if  @options.username!=undefined &&  @options.password!=undefined then "#{@options.username}:#{@options.password}" else ""
 			headers:
 				"content-type":"application/json"
 		}
@@ -50,6 +50,7 @@ class CouchDBHandler extends AbstractProcessingHandler
 		r = @request @getStreamOptions(),(res)=>
 			res.setEncoding('utf8');
 			res.on 'data',(data)=>
+				try data = JSON.parse(data) catch ignore
 				cb(undefined,data,record,this)
 
 		r.on("error",(err,res)=>cb(err,res,record,this))

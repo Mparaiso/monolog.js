@@ -8,6 +8,8 @@ https://github.com/Mparaiso/monolog.js
 
 [![Build Status](https://travis-ci.org/Mparaiso/monolog.js.png?branch=master)](https://travis-ci.org/Mparaiso/monolog.js)
 
+[![Coverage Status](https://coveralls.io/repos/Mparaiso/monolog.js/badge.png)](https://coveralls.io/r/Mparaiso/monolog.js)
+
 
 ###Log everything everywhere, monolog for javascript and node
 

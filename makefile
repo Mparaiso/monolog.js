@@ -1,5 +1,8 @@
 test: build
-	@mocha -R spec --recursive
+	@./node_modules/.bin/mocha -R list --recursive
+cover: build
+	@./node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha -- --recursive -R list
+	#@cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 build:
 	@./node_modules/.bin/coffee -m -b -o lib -c src 
 publish:

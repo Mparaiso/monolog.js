@@ -14,8 +14,8 @@ class ExpressProcessor
 		 	@return {monolog.Record} [description]
 		###
 		F = (record)->
-			record.extra ?= {}
-			_.extend(record.extra,F.request)
+			record.extra?={}
+			record.extra.request=F.request
 			return record
 		F.request = {}
 		F.express = express
