@@ -4,12 +4,10 @@ Abstractprocessinghandler = require './AbstractProcessingHandler'
 #MongoDBHandler
 class MongoDBHandler extends Abstractprocessinghandler
 
-	###
-		@param  {MongoClient} @mongodb    
-		@param  {String} @collection 
-		@param  {Number} level=100  
-		@param  {Boolean} bubble=true 
-	###
+	# @param  {MongoClient} @mongodb    
+	# @param  {String} @collection 
+	# @param  {Number} level=100  
+	# @param  {Boolean} bubble=true 
 	constructor:(@mongodb,@collection="log",level=100,bubble=true)->
 		super(level,bubble)
 

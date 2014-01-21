@@ -17,14 +17,12 @@ class AbstractProcessingHandler extends AbstractHandler
 		else
 			false
 
-	###
-		writes a record
-		@param  {monolog.Record}   record 
-		@param  {Function} cb     
-		@return {Boolean}         
-	###
+	# writes a record
+	# @param  {monolog.Record} record 
+	# @param  {Function} cb     
+	# @return {Boolean}         
 	write:(record,cb)->
 		cb(undefined,undefined,record,this) if cb instanceof Function
-		true
+		@bubble
 
 module.exports =  AbstractProcessingHandler
