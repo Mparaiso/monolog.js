@@ -49,7 +49,8 @@
     NullHandler: require(&#39;.&#47;handler&#47;NullHandler&#39;),
     TestHandler: require(&#39;.&#47;handler&#47;TestHandler&#39;),
     StreamHandler: require(&#39;.&#47;handler&#47;StreamHandler&#39;),
-    CouchDBHandler: require(&#39;.&#47;handler&#47;CouchDBHandler&#39;)
+    CouchDBHandler: require(&#39;.&#47;handler&#47;CouchDBHandler&#39;),
+    MongoDBHandler: require(&#39;.&#47;handler&#47;MongoDBHandler&#39;)
   },
   formatter: {
     LineFormatter: require(&#39;.&#47;formatter&#47;LineFormatter&#39;),
@@ -60,24 +61,7 @@
     ExpressProcessor: require(&#39;.&#47;processor&#47;ExpressProcessor&#39;)
   }
 }</code></pre>
-    <div class='docstring'>
-  <p>Usage</p><pre><code class="lang-javascript">    var monolog = require(&#39;monolog&#39;)    , Logger = monolog.Logger    , StreamHandler = monolog.handler.StreamHandler;
-
-    //create a Log channel
-    var log = new Logger(&#39;name&#39;)
-    //create a Log handler
-    log.pushHandler(new StreamHandler(&#39;/path/to/your.log&#39;,Logger.DEBUG))
-    //listen to log events
-    log.on(&quot;log&quot;,function(error,record,handler){console.log(arguments)});
-    // add records to the log
-    log.warn(&#39;Foo&#39;)
-    log.err(&#39;Bar&#39;)
-    log.debug(&#39;Baz&#39;)
-</code></pre>
-
-</div>
-<div class='tags'>
-</div>
+    
   </dd>
   <dt id='module.exports-variable'>
     module.exports
@@ -88,9 +72,66 @@
     
   </dd>
 </dl>
+      <h2>Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#monolog.create-'>
+        ~
+(monolog.Logger)
+<b>monolog.create</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+      create Logger 
+    </span>
+  </li>
+</ul>
+      <h2>Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='monolog.create-'>
+      ~
+(monolog.Logger)
+<b>monolog.create</b><span>()</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>create Logger</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>name</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>handlers</span>
+      <span class='type'>
+        (<tt>Array</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>processors</span>
+      <span class='type'>
+        (<tt>Array</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>monolog.Logger</tt></li>
+  </ul>
+</div>
+  </div>
+</div>
     </div>
     <div id='footer'>
-  January 20, 14 16:46:15 by
+  January 21, 14 18:46:20 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

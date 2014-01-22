@@ -34,9 +34,28 @@
         </p>
       </nav>
       <div id='filecontents'>
-        <h1 id="mongolog-js">mongolog.js</h1><p><a href="https://nodei.co/npm/monolog/"><img src="https://nodei.co/npm/monolog.png" alt="NPM"></a></p><p><a href="https://travis-ci.org/Mparaiso/monolog.js"><img src="https://travis-ci.org/Mparaiso/monolog.js.png?branch=master" alt="Build Status"></a></p><h2 id="log-everything-everywhere-monolog-for-javascript-and-node">Log everything everywhere, monolog for javascript and node</h2><p>author mparaiso <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#109;&#x70;&#x61;&#114;&#x61;&#x69;&#x73;&#x6f;&#x40;&#x6f;&#110;&#x6c;&#105;&#110;&#101;&#x2e;&#x66;&#x72;">&#109;&#x70;&#x61;&#114;&#x61;&#x69;&#x73;&#x6f;&#x40;&#x6f;&#110;&#x6c;&#105;&#110;&#101;&#x2e;&#x66;&#x72;</a></p><p>heavily inspired by <a href="https://github.com/Seldaek/monolog">monolog</a></p><h3 id="installation">Installation</h3>
+        <h1 id="mongolog-js">mongolog.js</h1><p><a href="https://github.com/Mparaiso/monolog.js">https://github.com/Mparaiso/monolog.js</a></p><p><a href="https://nodei.co/npm/monolog/"><img src="https://nodei.co/npm/monolog.png" alt="NPM"></a></p><p><a href="https://travis-ci.org/Mparaiso/monolog.js"><img src="https://travis-ci.org/Mparaiso/monolog.js.png?branch=master" alt="Build Status"></a></p><p><a href="https://coveralls.io/r/Mparaiso/monolog.js"><img src="https://coveralls.io/repos/Mparaiso/monolog.js/badge.png" alt="Coverage Status"></a></p><h3 id="log-everything-everywhere-monolog-for-javascript-and-node">Log everything everywhere, monolog for javascript and node</h3><p>author mparaiso <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x6d;&#112;&#x61;&#114;&#97;&#105;&#115;&#111;&#64;&#x6f;&#110;&#x6c;&#x69;&#110;&#x65;&#x2e;&#x66;&#x72;">&#x6d;&#112;&#x61;&#114;&#97;&#105;&#115;&#111;&#64;&#x6f;&#110;&#x6c;&#x69;&#110;&#x65;&#x2e;&#x66;&#x72;</a></p><p>heavily inspired by <a href="https://github.com/Seldaek/monolog">monolog</a> PHP library</p><h3 id="installation">Installation</h3>
 <pre><code>npm install -g monolog
-</code></pre><h3 id="usage">Usage</h3>
+</code></pre><h4 id="handlers">Handlers</h4>
+<ul>
+<li>ConsoleLogHandler : log to console</li>
+<li>CouchDBHandler : log to CouchDB</li>
+<li>MongoDBHandler : log to MongoDB</li>
+<li>StreamHandler : log to a stream</li>
+<li>TestHandler : log to an array</li>
+<li>NullHandler : null logging</li>
+</ul>
+<h4 id="processors">Processors</h4>
+<ul>
+<li>ExpressProcessor : get express request data</li>
+<li>WebProcessor : get server data</li>
+</ul>
+<h4 id="formatters">Formatters</h4>
+<ul>
+<li>JSONFormatter : format log to JSON</li>
+<li>LineFormatter : format log to a string</li>
+</ul>
+<h3 id="usage">Usage</h3>
 <h4 id="basic-usage">Basic usage</h4>
 <pre><code class="lang-javascript">    var monolog = require(&#39;monolog&#39;)
         , Logger = monolog.Logger
@@ -57,7 +76,7 @@
 <pre><code class="lang-javascript">    var http, logger, monolog, port, server, webProcessor;
 
     http = require(&#39;http&#39;);
-    monolog = require(&#39;./index&#39;);
+    monolog = require(&#39;monolog&#39;);
     port = 3000;
     server = http.createServer();
     logger = new monolog.Logger(&quot;server logger&quot;);
@@ -77,7 +96,7 @@
 <h4 id="couchdb-logging">CouchDB Logging</h4>
 <pre><code class="lang-javascript">    var monolog,logger;
 
-    monolog=require(&#39;./monolog&#39;);
+    monolog=require(&#39;monolog&#39;);
     logger = new monolog.Logger(&quot;couchdb logger&quot;);
     logger.pushHandler(new monolog.handler.CouchDBHandler({
         host:&quot;localhost&quot;,
@@ -87,6 +106,15 @@
         console.log(arguments);
     });
     logger.info(&#39;Logging to couchdb&#39;);
+</code></pre>
+<h4 id="mongodb-logging-with-mongodb-package-">MongoDB Logging ( with mongodb package)</h4>
+<pre><code class="lang-javascript">    var monolog,logger,mongodb;
+    monolog=require(&#39;monolog&#39;);
+    mongodb = require(&#39;mongodb&#39;).MongoClient.connect(&quot;localhost&quot;,function(err,db){
+        logger=new monolog.Logger(&quot;channel name&quot;);
+        logger.pushHandler(new monolog.handler.MongoDBHandler(db,&quot;log_collection&quot;));
+        logger.info(&quot;log message&quot;);
+    });
 </code></pre>
 <h4 id="creating-a-simple-logger-middleware-for-express">Creating a simple logger middleware for express</h4><p>in a file called logger.js</p><pre><code class="lang-javascript">     &quot;use strict&quot;;
      /**
@@ -128,7 +156,7 @@
       </div>
     </div>
     <div id='footer'>
-  January 20, 14 16:46:15 by
+  January 21, 14 18:46:20 by
   <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
     Codo
   </a>

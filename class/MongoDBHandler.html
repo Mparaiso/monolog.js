@@ -19,112 +19,97 @@
       Index
     </a>
     &raquo;
-    <span class='title'>NormalizerFormatter</span>
+    <span class='title'>MongoDBHandler</span>
   </div>
 </div>
     <div id='content'>
       <h1>
         Class:
-        NormalizerFormatter
+        MongoDBHandler
       </h1>
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>src\formatter\NormalizerFormatter.coffee</td>
+          <td>src\handler\MongoDBHandler.coffee</td>
         </tr>
         <tr>
           <td>Inherits:</td>
           <td>
-            <a href='../class/AbstractFormatter.html'>AbstractFormatter</a>
+            Abstractprocessinghandler
           </td>
         </tr>
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <ul>
-<li>Normalizes incoming records to remove objects/resources </li>
-<li>so it&#39;s easier to dump to various targets</li>
-</ul>
-
+  <p>MongoDBHandler</p>
 </div>
 <div class='tags'>
 </div>
-      <h2>Direct Known Subclasses</h2>
-      <p class='children'>
-        <a href='../class/LineFormatter.html'>LineFormatter</a>
-      </p>
       <h2>Instance Method Summary</h2>
       <ul class='summary'>
   <li>
     <span class='signature'>
-      <a href='#format-dynamic'>
+      <a href='#write-dynamic'>
         #
 (void)
-<b>format</b><span>(record)</span>
-      </a>
-    </span>
-    <span class='desc'>
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#normalize-dynamic'>
-        #
-(void)
-<b>normalize</b><span>(record)</span>
-      </a>
-    </span>
-    <span class='desc'>
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#doNormalize-dynamic'>
-        #
-(void)
-<b>doNormalize</b><span>(data)</span>
+<b>write</b><span>(record, cb)</span>
       </a>
     </span>
     <span class='desc'>
     </span>
   </li>
 </ul>
-      <h2>
-        <small>Inherited Method Summary</small>
-        <h3 class='inherited'>
-          Methods inherited from
-          <a href='../class/AbstractFormatter.html'>AbstractFormatter</a>
-        </h3>
-        <p class='inherited'>
-          <a href='../class/AbstractFormatter.html#format-dynamic'>#format</a>
-          <a href='../class/AbstractFormatter.html#formatBatch-dynamic'>#formatBatch</a>
-        </p>
-      </h2>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-dynamic'>
+      #
+(void)
+<b>constructor</b><span>(mongodb, collection = &quot;log&quot;, level = 100, bubble = true)</span>
+      <br>
+    </p>
+    <div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>@mongodb</span>
+      <span class='type'>
+        (<tt>MongoClient</tt>)
+      </span>
+      &mdash;
+      <span class='desc'></span>
+    </li>
+    <li>
+      <span class='name'>@collection</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>level=100</span>
+      <span class='type'>
+        (<tt>Number</tt>)
+      </span>
+      &mdash;
+      <span class='desc'></span>
+    </li>
+    <li>
+      <span class='name'>bubble=true</span>
+      <span class='type'>
+        (<tt>Boolean</tt>)
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
       <h2>Instance Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
-    <p class='signature' id='format-dynamic'>
+    <p class='signature' id='write-dynamic'>
       #
 (void)
-<b>format</b><span>(record)</span>
-      <br>
-    </p>
-    
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='normalize-dynamic'>
-      #
-(void)
-<b>normalize</b><span>(record)</span>
-      <br>
-    </p>
-    
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='doNormalize-dynamic'>
-      #
-(void)
-<b>doNormalize</b><span>(data)</span>
+<b>write</b><span>(record, cb)</span>
       <br>
     </p>
     
