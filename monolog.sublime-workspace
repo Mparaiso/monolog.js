@@ -1,0 +1,461 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"req",
+				"req	require"
+			],
+			[
+				"_",
+				"_csrf	(?)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"mark",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"coffee",
+				"Coffee: Check Syntax"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"html",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"encode",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"fe",
+				"Fetch: File"
+			],
+			[
+				"fetc",
+				"Fetch: Manage"
+			],
+			[
+				"fet",
+				"Fetch: Manage"
+			],
+			[
+				"cap",
+				"Convert Case: Upper Case"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 159.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/development/categories/node/monolog/src/handler/MongoDBHandler.coffee",
+		"/C/development/categories/node/monolog/.npmignore",
+		"/C/development/categories/node/monolog/test/monolog.test.js",
+		"/C/development/categories/node/monolog/README.md",
+		"/C/development/categories/node/monolog/test/Handler/MongoDBHandler.test.js",
+		"/C/development/categories/node/monolog/src/handler/AbstractProcessingHandler.coffee",
+		"/C/development/categories/node/monolog/makefile",
+		"/C/development/categories/node/monolog/.travis.yml",
+		"/C/development/categories/node/monolog/test/processor/ExpressProcessor.test.js",
+		"/C/development/categories/node/monolog/src/monolog.coffee",
+		"/C/development/categories/node/monolog/src/handler/CouchDBHandler.coffee",
+		"/C/development/categories/node/monolog/src/Logger.coffee",
+		"/C/development/categories/node/monolog/package.json",
+		"/C/development/categories/node/monolog/test/Logger.test.js",
+		"/C/development/categories/node/monolog/src/formatter/LineFormatter.coffee",
+		"/C/development/categories/node/monolog/src/handler/TestHandler.coffee",
+		"/C/development/categories/node/monolog/test/Handler/TestHandler.test.js",
+		"/C/development/categories/node/monolog/src/handler/AbstractHandler.coffee",
+		"/C/development/categories/node/monolog/test/Handler/CouchDBHandler.test.js",
+		"/C/development/categories/node/monolog/node_modules/coveralls/bin/coveralls.js",
+		"/C/development/categories/node/monolog/test/formatter/LineFormatter.test.js",
+		"/C/development/categories/node/monolog/test/Handler/StreamHandler.test.js",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/JsFormat.sublime-settings",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/JsFormat/JsFormat.sublime-settings",
+		"/C/development/categories/node/monolog/src/processor/ExpressProcessor.coffee",
+		"/C/development/categories/node/monolog/.gitignore",
+		"/C/development/categories/node/monolog/monolog.sublime-project",
+		"/C/development/categories/node/monolog/monolog.sublime-workspace",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/TernJS.sublime-settings",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/TernJS/TernJS.sublime-settings",
+		"/C/development/categories/node/mpm.video/mpm.video.sublime-project",
+		"/C/development/categories/node/mpm.video/node_modules/mocha/bin/_mocha",
+		"/C/development/categories/node/mpm.video/index.js",
+		"/C/development/categories/node/mpm.video/lib/config.js",
+		"/C/development/categories/node/mpm.video/lib/logger.js",
+		"/C/development/categories/node/mpm.video/temp/log.txt",
+		"/C/development/categories/node/mpm.video/package.json",
+		"/C/development/categories/node/mpm.video/bin/mpm-video.coffee",
+		"/C/development/categories/node/mpm.video/bin/mpm-video",
+		"/C/development/categories/node/mpm.video/bin/mpm-video.js",
+		"/C/development/categories/node/mpm.video/test/youtubeurlparser.test.js",
+		"/C/development/categories/node/mpm.video/test/lib.db.video.test.js",
+		"/C/development/categories/node/mpm.video/test/index.test.js",
+		"/C/development/categories/node/mpm.video/lib/video-urlparser.js",
+		"/C/development/categories/node/mpm.video/lib/db.js",
+		"/C/development/categories/node/mpm.video/makefile",
+		"/C/development/categories/node/mpm.video/.gitignore",
+		"/C/development/categories/node/mpm.video/log.txt",
+		"/C/development/categories/node/mpm.video/README.md",
+		"/C/development/categories/node/mpm.video/lib/index.js",
+		"/C/development/categories/node/monolog/test/handler/CouchDBHandler.test.js",
+		"/C/development/categories/node/monolog/exemples/file.js",
+		"/C/development/categories/node/monolog/src/formatter/AbstractFormatter.coffee",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/travis_php.sublime-snippet",
+		"/C/development/categories/php/markme/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php",
+		"/C/development/categories/node/monolog/src/formatter/NormalizerFormatter.coffee",
+		"/C/development/categories/node/monolog/exemples/couchDB.js",
+		"/C/development/categories/node/monolog/src/handler/StreamHandler.coffee",
+		"/C/development/categories/node/monolog/exemples/serverRequest.js",
+		"/C/development/categories/node/monolog/src/handler/NullHandler.coffee",
+		"/C/development/categories/php/markme/vendor/monolog/monolog/src/Monolog/Handler/CouchDBHandler.php",
+		"/C/development/categories/node/monolog/doc/index.html",
+		"/C/development/categories/node/monolog/src/formatter/JSONFormatter.coffee",
+		"/C/development/categories/node/monolog/node_modules/request/README.md",
+		"/C/development/categories/node/monolog/test/handler/StreamHandler.test.js",
+		"/C/development/categories/php/markme/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php",
+		"/C/development/categories/node/monolog/test/handler/CouchDBHandler.coffee",
+		"/C/development/categories/node/monolog/exemples/serverRequestLogging.coffee",
+		"/C/development/categories/node/monolog/test/processor/WebProcessor.test.js",
+		"/C/development/categories/node/monolog/src/processor/WebProcessor.coffee",
+		"/C/development/categories/node/monolog/server.coffee",
+		"/C/development/categories/node/monolog/index.js",
+		"/C/development/categories/node/monolog/src/Processor/WebProcessor.coffee",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/README.md",
+		"/C/development/categories/node/monolog/lib/handler/AbstractHandler.js",
+		"/C/development/categories/node/monolog/stream.log",
+		"/C/development/categories/node/monolog/src/handler/ConsoleLogHandler.coffee",
+		"/C/development/categories/node/monolog/lib/formatter/NormalizerFormatter.js",
+		"/C/development/categories/node/monolog/lib/handler/TestHandler.js",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/Better CoffeeScript/Keymaps/Default (Windows).sublime-keymap",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/Better CoffeeScript/CoffeeScript.sublime-settings",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/CoffeeScript.sublime-settings",
+		"/C/development/categories/node/monolog/lib/formatter/NormalizerFormatter.coffee",
+		"/C/development/categories/node/monolog/lib/Logger.coffee",
+		"/C/development/categories/node/monolog/lib/monolog.map",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/Better CoffeeScript/CoffeeScript.sublime-build",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/IcedCoffeeScript/Commands/IcedCoffeeScript.sublime-build",
+		"/C/development/categories/node/monolog/lib/formatter/LineFormatter.js",
+		"/C/development/categories/node/monolog/lib/formatter/LineFormatter.coffee",
+		"/C/development/categories/node/monolog/lib/formatter/FormatterInterface.coffee",
+		"/C/development/categories/node/monolog/lib/monolog.coffee",
+		"/C/development/categories/node/monolog/lib/handler/AbstractHandler.coffee",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/IcedCoffeeScript/package-metadata.json",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/IcedCoffeeScript/Syntaxes/IcedCoffeeScript.tmLanguage",
+		"/C/development/categories/node/monolog/lib/handler/AbstractProcessingHandler.coffee",
+		"/C/development/categories/node/monolog/test.coffee",
+		"/C/development/categories/node/monolog/test.js",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/CoffeeLint/README.md",
+		"/C/development/categories/node/monolog/node_modules/source-map-support/README.md",
+		"/C/development/categories/node/monolog/lib/handler/ConsoleLogHandler.coffee",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/development/categories/node/monolog/lib/handler/NullHandler.coffee",
+		"/C/development/categories/node/monolog/lib/Logger.js",
+		"/C/development/categories/node/mpm.video/lib/routes/index.js",
+		"/C/development/categories/node/mpm.video/test/lib.db.test.js",
+		"/C/development/categories/node/mpm.video/test/lib.routes.playlist.test.js",
+		"/C/development/categories/node/mpm.video/lib/routes/video.js",
+		"/C/development/categories/node/mpm.video/view/layout.jade",
+		"/C/development/categories/node/mpm.video/view/index.jade",
+		"/C/development/categories/node/mpm.video/public/stylesheets/styles.less",
+		"/C/development/categories/node/mpm.video/views/index.jade",
+		"/C/development/categories/node/mpm.video/public/javascript/angular-1.28.min.js",
+		"/C/Users/mark prades/AppData/Roaming/Sublime Text 2/Packages/User/Fetch.sublime-settings",
+		"/C/development/categories/node/mpm.video/public/layout.jade",
+		"/C/development/categories/node/mpm.video/public/index.jade",
+		"/C/Bin/mongo",
+		"/C/development/categories/node/mpm.video/test/lib.rest.test.js",
+		"/C/development/categories/node/mpm.video/lib/rest.js",
+		"/C/development/categories/node/mpm.video/test/lib.routes.video.test.js",
+		"/C/development/categories/node/mpm.video/lib/routes/playlist.js",
+		"/C/development/categories/node/mpm.form/package.json",
+		"/C/development/categories/node/mpm.form/test/form.test.js",
+		"/C/development/categories/node/mpm.form/lib/form.js",
+		"/C/development/categories/node/mpm.form/lib/fields.js",
+		"/C/development/categories/node/mpm.form/README.md",
+		"/C/development/categories/node/mpm.shortcode/shortcode.js",
+		"/C/development/categories/node/mpm.shortcode/.travis.yml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"exit",
+			"from",
+			"Provider",
+			"*",
+			"url",
+			"console",
+			"* ",
+			"console",
+			"context=[]",
+			"scope",
+			"format",
+			"test",
+			"conso",
+			"console",
+			"update",
+			"404",
+			"base",
+			"Rest",
+			"();\n",
+			"adapters",
+			"this._name",
+			"this._allows",
+			"self",
+			"console",
+			"\":\n",
+			"prefixedname",
+			"jslint",
+			"'/]",
+			">');\n",
+			"+)\\=(\\\"|\\')(.*)(\\\"|\\')$/;",
+			"    \n",
+			"font",
+			"extend",
+			"extende",
+			"\\d",
+			"valid",
+			"valida",
+			"Flags",
+			"self",
+			"meta",
+			"unb",
+			"prefix",
+			"          ",
+			"(\\n)+",
+			"\\r",
+			"\\n",
+			"\\r",
+			"\\n",
+			"check",
+			"toJSON",
+			"check",
+			"project",
+			"import",
+			"utils",
+			"data",
+			"toJSON",
+			"options.options",
+			"||",
+			"_option",
+			"option",
+			"forms",
+			"form.",
+			"project",
+			"<code>.*</code>",
+			"key",
+			"map",
+			"');\n",
+			"attributes",
+			"module",
+			"javasc",
+			"disable",
+			"js",
+			"build",
+			"startupinfo",
+			"get_startupinfo",
+			"subprocess",
+			"5",
+			"loading_files",
+			"AtomicValue",
+			"int",
+			"()\n",
+			"t",
+			"def run_",
+			"def run(",
+			"windowcommand",
+			"def run",
+			"run",
+			"run_once",
+			"process",
+			"threading",
+			"run_once",
+			"enable_save_onl",
+			"command",
+			"run",
+			"messages",
+			"add_message",
+			"run",
+			"parse_errors",
+			"debug",
+			"output",
+			"sublime.",
+			"check_enabled",
+			"get_executable",
+			"print",
+			"out",
+			"console",
+			"addNode",
+			"addnode",
+			"removenode"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"BaseParser",
+			"",
+			"context",
+			"Base",
+			"adapter",
+			"this._options.name",
+			"this._options.allows",
+			"this",
+			"",
+			"name",
+			"",
+			"options.choices",
+			"radio",
+			"data",
+			"forms.",
+			"/**\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CoffeeLintPanel":
+	{
+		"height": 130.0
+	},
+	"output.coffee_compile_output":
+	{
+		"height": 130.0
+	},
+	"output.exec":
+	{
+		"height": 215.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"streamhand",
+				"src/handler/StreamHandler.coffee"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 265.0,
+	"status_bar_visible": true
+}
