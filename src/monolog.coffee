@@ -1,6 +1,11 @@
 "use strict"
 
-monolog = 
+###
+monolog
+@type {monolog}
+@namespace monolog
+###
+Monolog = 
 	Logger:require('./Logger')
 	handler:
 		AbstractHandler:require('./handler/AbstractHandler')
@@ -25,7 +30,7 @@ monolog =
 	@param {Array} processors
 	@return {monolog.Logger} 
 ###
-monolog.create = -> new monolog.Logger(arguments...)
+Monolog.create = -> new Monolog.Logger(arguments...)
 
-module.exports = monolog
+module.exports = Monolog
 

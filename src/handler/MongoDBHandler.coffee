@@ -13,6 +13,7 @@ class MongoDBHandler extends Abstractprocessinghandler
 
 	write:(record,cb)->
 		@mongodb.collection(@collection).insert record,(err,res)=>
+			@mongodb.close()
 			return cb(err,res,record,this)
 		return @bubble
 
